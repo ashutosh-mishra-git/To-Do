@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/style.css" type="text/css" />
+    <title>To-Do app</title>
+  </head>
+  <style></style>
+  <body>
+    <div class="container">
+      <h1>My TO-DO APP</h1>
+
+      <div class="formFields">
+        <form action="/Todo " method="POST">
+          <input
+            class="inputField"
+            type="text"
+            name="data"
+            placeholder="data"
+            required
+          />
+          <button class="btn" type="submit">save</button>
+        </form>
+      </div>
+
+      <div class="formShow">
+        <% datap.forEach((e)=>{ %>
+        <div class="showCon">
+          <p><%= e.data.toUpperCase() %></p>
+          <p>
+            <%=e.createdAt.toLocaleString('en-IN',{dateStyle:"short"}).toUpperCase()%>
+          </p>
+          <a href="/Todo/delete/<%=e._id%>" request-method="DELETE"
+            ><img class="img" src="../public/images/delete.png" alt=""
+          /></a>
+          <a href="Todo/edit/<%=e._id%>"
+            ><img class="img" src="../public/images/edit.svg" alt=""
+          /></a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
