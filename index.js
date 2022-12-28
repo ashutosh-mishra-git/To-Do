@@ -45,6 +45,10 @@ app.use('/public', express.static('public'));
 
 app.use(TodoRoute)
 
+app.use('/*', (req, res) => {
+    res.send('<h1>Page NOt found</h1>')
+})
+
 const PORT = process.env.PORT || 5000
 app.listen(PORT, () => {
     console.log("server running on port 5000")
