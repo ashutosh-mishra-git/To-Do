@@ -43,7 +43,7 @@ app.use(express.urlencoded({
 app.use('/public', express.static('public'));
 
 
-app.use('/Todo', TodoRoute)
+app.use(TodoRoute)
 
 
 app.listen(5000, () => {
