@@ -13,7 +13,7 @@
       <h1>My TO-DO APP</h1>
 
       <div class="formFields">
-        <form action="/Todo " method="POST">
+        <form action="/" method="POST">
           <input
             class="inputField"
             type="text"
@@ -32,10 +32,10 @@
           <p>
             <%=e.createdAt.toLocaleString('en-IN',{dateStyle:"short"}).toUpperCase()%>
           </p>
-          <a href="/Todo/delete/<%=e._id%>" request-method="DELETE"
+          <a href="/delete/<%=e._id%>" request-method="DELETE"
             ><img class="img" src="../public/images/delete.png" alt=""
           /></a>
-          <a href="Todo/edit/<%=e._id%>"
+          <a href="/edit/<%=e._id%>"
             ><img class="img" src="../public/images/edit.svg" alt=""
           /></a>
         </div>

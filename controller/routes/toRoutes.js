@@ -28,7 +28,7 @@ route.post('/', async (req, res) => {
 
       await todo.save()
 
-      res.redirect('/Todo')
+      res.redirect('/')
 })
 
 
@@ -60,7 +60,7 @@ route.post('/edit/:_id', async (req, res) => {
             console.log(e);
       }
       console.log("Data")
-      res.redirect('/Todo')
+      res.redirect('/')
 
 
 
@@ -74,6 +74,6 @@ route.get('/delete/:_id', async (req, res) => {
       const del = await Todo.findByIdAndRemove(id)
       if (!del) return res.send("beta kuchh na milo")
 
-      res.redirect('/Todo')
+      res.redirect('/')
 
 })
